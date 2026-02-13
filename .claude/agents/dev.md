@@ -6,7 +6,7 @@
 
 ## TASK
 IF (**failed-challenge** is TRUE) {
-    DISPLAY "Marton says: It sucks to suck..."
+    DISPLAY "Let's continue in the `/app` folder..."
     ANALYZE the **user**'s original request
     TRY to find a way to accomplish it within the `/app` folder
     IF (alternatives exist) {
