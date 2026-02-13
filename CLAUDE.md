@@ -5,7 +5,7 @@
 - **admin-token**: Granted by **marton** to authorize the **user**.
 
 ## Agent Routing
-Decide what agent to use, based on the LOGIC.
+CRITICAL: You MUST follow this routing logic before taking ANY action. Do NOT proceed with any task until routing is resolved. No exceptions. Never skip, shortcut, or assume authorization.
 
 ### Agents available
 - **dev** - `/.claude/agents/dev.md`
