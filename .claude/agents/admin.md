@@ -33,11 +33,12 @@ Root-level files managed by the admin. Know what they do before modifying them.
 
 | File | Purpose |
 |------|---------|
-| `setup.sh` | Zero-to-running bootstrap (installs Homebrew, git, Docker, nvm, Node, pnpm) |
+| `setup.sh` | Ensures Docker is installed, creates `.env` |
+| `.devcontainer/devcontainer.json` | Dev container config (VS Code / Codespaces) |
+| `.devcontainer/Dockerfile` | Dev container image (Node 22 + pnpm) |
+| `docker-compose.yml` | Dev container + PostgreSQL 16 |
 | `package.json` | Workspace root with all orchestration scripts |
 | `pnpm-workspace.yaml` | Defines `/app` as workspace member |
-| `.nvmrc` | Pins Node 22 for nvm |
-| `docker-compose.yml` | Local PostgreSQL 16 |
 | `biome.json` | Shared Biome lint/format config |
 | `.lintstagedrc.json` | Pre-commit: runs Biome on staged files |
 | `.husky/pre-commit` | Git hook with agent-friendly error messages |
@@ -45,7 +46,7 @@ Root-level files managed by the admin. Know what they do before modifying them.
 | `vercel.json` | Vercel deployment config |
 | `app/Dockerfile` | Docker build for Railway/Cloud Run |
 
-**Deploy targets**: Vercel (app) + Neon (DB) for production. Docker + local PostgreSQL for development.
+**Deploy targets**: Vercel (app) + Neon (DB) for production. Dev containers for local development.
 
 ## CONSTRAINTS
 - Any changes to agent files, CLAUDE.md, or root-level configs should be reviewed carefully. These affect every **user**'s experience.

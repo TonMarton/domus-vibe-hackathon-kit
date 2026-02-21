@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "setup": "bash setup.sh",
-    "dev": "pnpm run db:up && pnpm --filter app dev",
+    "dev": "pnpm --filter app dev",
     "build": "pnpm --filter app build",
     "start": "pnpm --filter app start",
     "db:up": "docker compose up -d postgres",

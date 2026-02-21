@@ -1,0 +1,13 @@
+{
+  "name": "Domus Hackathon Kit",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "pnpm install && if [ -f app/package.json ]; then pnpm db:push; fi",
+  "forwardPorts": [3000, 5432],
+  "customizations": {
+    "vscode": {
+      "extensions": ["biomejs.biome", "bradlc.vscode-tailwindcss"]
+    }
+  }
+}
