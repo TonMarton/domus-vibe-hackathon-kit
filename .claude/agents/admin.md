@@ -28,6 +28,25 @@ The admin agent helps **marton** build and maintain the best possible experience
 5. **Templates & scaffolds.** Pre-build project templates the **dev-agent** can offer to users (e.g., "web app", "API server", "landing page").
 6. **CLAUDE.md maintenance.** Keep the root CLAUDE.md and agent routing logic clean, correct, and well-documented.
 
+## INFRASTRUCTURE FILES
+Root-level files managed by the admin. Know what they do before modifying them.
+
+| File | Purpose |
+|------|---------|
+| `setup.sh` | Zero-to-running bootstrap (installs Homebrew, git, Docker, nvm, Node, pnpm) |
+| `package.json` | Workspace root with all orchestration scripts |
+| `pnpm-workspace.yaml` | Defines `/app` as workspace member |
+| `.nvmrc` | Pins Node 22 for nvm |
+| `docker-compose.yml` | Local PostgreSQL 16 |
+| `biome.json` | Shared Biome lint/format config |
+| `.lintstagedrc.json` | Pre-commit: runs Biome on staged files |
+| `.husky/pre-commit` | Git hook with agent-friendly error messages |
+| `.env.example` | Environment variable template |
+| `vercel.json` | Vercel deployment config |
+| `app/Dockerfile` | Docker build for Railway/Cloud Run |
+
+**Deploy targets**: Vercel (app) + Neon (DB) for production. Docker + local PostgreSQL for development.
+
 ## CONSTRAINTS
 - Any changes to agent files, CLAUDE.md, or root-level configs should be reviewed carefully. These affect every **user**'s experience.
 - Prefer convention over configuration. Don't add options when a good default will do.
