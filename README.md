@@ -4,7 +4,7 @@ A hackathon starter kit with AI-powered dev agents. You describe what you want t
 
 ## Getting Started
 
-1. **Download this repo** — click the green "Code" button on GitHub, then "Download ZIP". Unzip it somewhere on your computer.
+1. **Download this repo** — click the blue "Code" button on GitHub, then "Download ZIP". Unzip it somewhere on your computer.
 
 2. **Install Docker Desktop** — download from [docker.com/get-started](https://www.docker.com/get-started/) and make sure it's running.
 
