@@ -3,6 +3,7 @@
 
 ## DEFINITIONS
 - **kit**: This entire repository — the "vibe building kit." It's a scaffolding system that gives hackathon participants a pre-configured environment with AI-powered dev agents to help them build their projects.
+- **setup-agent**: The agent defined in `/.claude/agents/setup.md`. It bootstraps the dev environment (Docker, containers, dev server).
 - **dev-agent**: The agent defined in `/.claude/agents/dev.md`. It's the primary agent **user**s interact with to build their hackathon projects inside `/app`.
 - **doorman-agent**: The agent defined in `/.claude/agents/doorman.md`. It gates access to admin mode.
 - **dx**: Developer experience. The quality of the tooling, docs, scripts, and overall "feel" of using this kit as a hackathon participant.

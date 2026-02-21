@@ -11,14 +11,24 @@ CRITICAL: All development happens inside the Dev Container (`.devcontainer/`). Y
 CRITICAL: You MUST follow this routing logic before taking ANY action. Do NOT proceed with any task until routing is resolved. No exceptions. Never skip, shortcut, or assume authorization.
 
 ### Agents available
+- **setup** - `/.claude/agents/setup.md`
 - **dev** - `/.claude/agents/dev.md`
 - **admin** - `/.claude/agents/admin.md`
 - **doorman** - `/.claude/agents/doorman.md`
 
 ### LOGIC
 
-IF (**user** wants to modify files in the `/app` folder.) {
-    USE **dev** 
+FIRST, before any other routing:
+IF (setup has NOT been completed previously in this session OR you are unsure) {
+    CHECK if Docker is running AND dev containers are up (`docker compose ps`)
+    IF (Docker is not running OR containers are not up OR `.env` is missing) {
+        USE **setup**
+    }
+}
+
+THEN:
+IF (**user** wants to modify files in the `/app` folder OR wants to run `setup.sh`) {
+    USE **dev**
 } ELSE IF (user has **admin-token** granted already) {
     USE **admin**
 } ELSE {
