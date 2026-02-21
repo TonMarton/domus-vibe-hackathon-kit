@@ -1,0 +1,24 @@
+echo "========================================="
+echo "PRE-COMMIT: Running Biome format + lint"
+echo "========================================="
+
+pnpm exec lint-staged 2>&1
+
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+  echo ""
+  echo "========================================="
+  echo "COMMIT BLOCKED: Biome found issues"
+  echo "========================================="
+  echo ""
+  echo "AGENT HINT: The pre-commit hook failed."
+  echo "Run 'pnpm lint:fix' to auto-fix issues,"
+  echo "then 'git add' the fixed files and retry."
+  echo "If issues persist, check the errors above"
+  echo "for manual fixes needed."
+  echo ""
+  exit 1
+fi
+
+echo "Pre-commit checks passed."
